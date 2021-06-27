@@ -17,8 +17,8 @@ def rgb_list_to_luminance_index_list(rgb_list):
         luminance = 0.3 * pixel[0] + 0.59 * pixel[1] + 0.11 * pixel[2]
         luminance /= 255
         index = int(round(luminance / 0.05))
-        if index > 19:
-            index = 19
+        if index > 20:
+            index = 20
         if index < 0:
             index = 0
         index_list.append(index)
@@ -48,11 +48,11 @@ def main():
     # apply brightness
     for i in range(len(index_list)):
         index_list[i] = int(index_list[i] * brightness)
-        if index_list[i] > 19:
-            index_list[i] = 19
+        if index_list[i] > 20:
+            index_list[i] = 20
         if index_list[i] < 0:
             index_list[i] = 0
-    # print out final ascii drawinggo
+    # print out final ascii drawing
     i = 1
     string = ""
     for pixel in index_list:
